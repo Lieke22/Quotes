@@ -68,31 +68,31 @@ class QuotesController < ApplicationController
 
       @quote = Quote.order("RANDOM()").first
 
-      FlickRaw.api_key=""
-      FlickRaw.shared_secret=""
-      result = flickr.photos.search(:text => @quote.most_significant_word, :per_page => 1)
+      if !@quote.image_url     
+        FlickRaw.api_key=""
+        FlickRaw.shared_secret=""
+        result = flickr.photos.search(:text => @quote.most_significant_word, :per_page => 1)
 
-      result.each do |p|
-        info = flickr.photos.getInfo(:photo_id => p.id)
-        sizes = flickr.photos.getSizes(:photo_id => p.id)
+        result.each do |p|
+          info = flickr.photos.getInfo(:photo_id => p.id)
+          sizes = flickr.photos.getSizes(:photo_id => p.id)
 
-        photo_area = 0
-        biggest_url = nil
-        
+          photo_area = 0
+          biggest_url = nil
+          
+          sizes.each do |size|
+            calculate_area = size.width.to_f * size.height.to_f
+            puts "size of #{size.label} is #{size.width} x #{size.height} : #{size.source}"
+            if calculate_area > photo_area
+              photo_area = calculate_area
+              biggest_url = size.source
+            end
 
-        sizes.each do |size|
-          calculate_area = size.width.to_f * size.height.to_f
-          puts "size of #{size.label} is #{size.width} x #{size.height} : #{size.source}"
-          if calculate_area > photo_area
-            photo_area = calculate_area
-            biggest_url = size.source
           end
 
+          @quote.image_url = biggest_url
+          @quote.save
         end
-
-        @quote.image_url = biggest_url
-
-        break
       end
   end
 
