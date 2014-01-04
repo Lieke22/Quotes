@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140101200628) do
   create_table "quotes", force: true do |t|
     t.string   "author"
     t.text     "quote"
+    t.text     "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

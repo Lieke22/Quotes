@@ -10,5 +10,10 @@
   <%= @quote.quote %>
 </p>
 
+<p>
+  <strong>Image url:</strong>
+  <%= @quote.image_url %>
+</p>
+
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', quotes_path %>

@@ -5,6 +5,7 @@
     <tr>
       <th>Author</th>
       <th>Quote</th>
+      <th>Image url</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= quote.author %></td>
         <td><%= quote.quote %></td>
+        <td><%= quote.image_url %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
         <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
