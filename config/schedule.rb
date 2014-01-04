@@ -8,7 +8,7 @@
 # set :output, "/path/to/my/cron_log.log"
 set :environment, "development"
 
-every 1.minute do
+every 10.hours do
    rake "quotes:fetch"
 end
 

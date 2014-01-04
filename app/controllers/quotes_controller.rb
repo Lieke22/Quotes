@@ -68,31 +68,9 @@ class QuotesController < ApplicationController
 
       @quote = Quote.order("RANDOM()").first
 
-      if !@quote.image_url     
-        FlickRaw.api_key=""
-        FlickRaw.shared_secret=""
-        result = flickr.photos.search(:text => @quote.most_significant_word, :per_page => 1)
-
-        result.each do |p|
-          info = flickr.photos.getInfo(:photo_id => p.id)
-          sizes = flickr.photos.getSizes(:photo_id => p.id)
-
-          photo_area = 0
-          biggest_url = nil
-          
-          sizes.each do |size|
-            calculate_area = size.width.to_f * size.height.to_f
-            puts "size of #{size.label} is #{size.width} x #{size.height} : #{size.source}"
-            if calculate_area > photo_area
-              photo_area = calculate_area
-              biggest_url = size.source
-            end
-
-          end
-
-          @quote.image_url = biggest_url
+      if @quote.image_url.blank?      
+          @quote.image_url = get_flickr_image_url(@quote)
           @quote.save
-        end
       end
   end
 
@@ -105,10 +83,32 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:author, :quote)
+      params.require(:quote).permit(:author, :quote, :image_url)
     end
 
-    
-    
-end
+    def get_flickr_image_url(quote)
+      FlickRaw.api_key=""
+      FlickRaw.shared_secret=""
+      result = flickr.photos.search(:text => quote.most_significant_word, :per_page => 1)
+    puts "result" 
+      result.each do |p|
+        info = flickr.photos.getInfo(:photo_id => p.id)
+        sizes = flickr.photos.getSizes(:photo_id => p.id)
+puts "XXXXXXXXXXXXXXXXXXX"
+        photo_area = 0
+        biggest_url = nil
+        
+        sizes.each do |size|
+          calculate_area = size.width.to_f * size.height.to_f
+          puts "size of #{size.label} is #{size.width} x #{size.height} : #{size.source}"
+          if calculate_area > photo_area
+            photo_area = calculate_area
+            biggest_url = size.source
+          end
+        end
 
+        return biggest_url
+      end
+    end  
+
+end
