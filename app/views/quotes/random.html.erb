@@ -1,10 +1,28 @@
+<div id="slides">
 
-  <h2>Timeless Quote</h2>
+  <h3> <%= @quote.quote %>
+  <i> <%= @quote.author %> </i></h3>
+
+  <ul class="slides-container">
+    <li>
+      <img src="<%= @quote.image_url %>" alt="">
+      <div class="container">
+        Slide one
+      </div>
+    </li>
+  <nav class="slides-navigation">
+    <a href="#" class="next">Next</a>
+    <a href="#" class="prev">Previous</a>
+  </nav>
+</div>
+
+
   
-     <span> 
-           <%= @quote.quote %>
-  <i> <%= @quote.author %> </i>
-        <img src="<%= @quote.image_url %>"> </span>
+
+  
+  
+
+        
   
   
 

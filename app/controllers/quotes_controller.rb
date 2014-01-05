@@ -89,14 +89,17 @@ class QuotesController < ApplicationController
     def get_flickr_image_url(quote)
       FlickRaw.api_key=""
       FlickRaw.shared_secret=""
-      result = flickr.photos.search(:text => quote.most_significant_word, :per_page => 1)
-    puts "result" 
+
+      result = flickr.photos.search(:text => quote.most_significant_word, :per_page => 1, :safe_search => 1, :is_commons => true)
+
+      #Image used in case no result is found
+      biggest_url = "http://farm3.staticflickr.com/2862/10835118755_3757dab0a4_h.jpg"
+
       result.each do |p|
         info = flickr.photos.getInfo(:photo_id => p.id)
+        puts "REGEL 99"
         sizes = flickr.photos.getSizes(:photo_id => p.id)
-puts "XXXXXXXXXXXXXXXXXXX"
         photo_area = 0
-        biggest_url = nil
         
         sizes.each do |size|
           calculate_area = size.width.to_f * size.height.to_f
@@ -107,8 +110,11 @@ puts "XXXXXXXXXXXXXXXXXXX"
           end
         end
 
-        return biggest_url
+        
       end
+
+      return biggest_url
+
     end  
 
 end
