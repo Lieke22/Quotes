@@ -1,6 +1,30 @@
-<h1>Editing quote</h1>
 
-<%= render 'form' %>
+<div class="ui inverted page grid masthead segment">
+	<div class="column">
+		<div class="inverted secondary pointing ui menu">
+			<div class="header item"><h1>Editing quote</h1>
+			</div>
+		</div>
 
-<%= link_to 'Show', @quote %> |
-<%= link_to 'Back', quotes_path %>
+
+		<div class="ui form">
+			<%= render 'form' %>
+		</div>
+		<br>
+		<div class="ui animated fade button">
+			<div class="hidden content"><%= link_to 'Show', @quote %></div>
+			<div class="visible content">
+				<i class="search icon"></i>
+			</div>
+		</div>
+
+		<div class="ui animated fade button">
+			<div class="hidden content"><%= link_to 'Back', quotes_path %></div>
+			<div class="visible content">
+				<i class="undo icon"></i>
+			</div>
+		</div>
+
+	</div>
+
+</div>

@@ -97,7 +97,6 @@ class QuotesController < ApplicationController
 
       result.each do |p|
         info = flickr.photos.getInfo(:photo_id => p.id)
-        puts "REGEL 99"
         sizes = flickr.photos.getSizes(:photo_id => p.id)
         photo_area = 0
         

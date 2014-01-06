@@ -68,6 +68,15 @@ p a {
   font-weight: bold;
 }
 
+
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: blue;
+}
 /*******************************
             Global
 *******************************/
@@ -81,7 +90,7 @@ p a {
   padding-bottom: 3.5rem;
 }
 
-.masthead.segment {
+.masthead.segment{
   background-image: url(/assets/bg.jpg);
   -webkit-background-size: cover;
   background-size: cover;

@@ -21,4 +21,6 @@ ActiveRecord::Schema.define(version: 20140101200628) do
     t.datetime "updated_at"
   end
 
+  add_index "quotes", ["quote"], name: "index_quotes_on_quote", unique: true
+
 end

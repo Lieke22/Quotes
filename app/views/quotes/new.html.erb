@@ -1,5 +1,19 @@
-<h1>New quote</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', quotes_path %>
+<div class="ui inverted page grid masthead segment">
+	<div class="column">
+		<div class="inverted secondary pointing ui menu">
+			<div class="header item"><h1>New quote</h1>
+			</div>
+		</div>
+		<div class="ui form">
+			<%= render 'form' %>
+		</div>
+		<br>
+		<div class="ui animated fade button">
+			<div class="hidden content"><%= link_to 'Back', quotes_path %></div>
+			<div class="visible content">
+				<i class="reply mail icon"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	

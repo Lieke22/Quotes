@@ -1,19 +1,36 @@
-<p id="notice"><%= notice %></p>
+	<div class="ui inverted page grid masthead segment">
+		<div class="column">
+			<div class="inverted secondary pointing ui menu">
+				<div class="header item"><h1>Show quote</h1></div>
+			</div>
+			<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @quote.author %>
-</p>
+			<p>
+				<strong>Author:</strong>
+				<%= @quote.author %>
+			</p>
 
-<p>
-  <strong>Quote:</strong>
-  <%= @quote.quote %>
-</p>
+			<p>
+				<strong>Quote:</strong>
+				<%= @quote.quote %>
+			</p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @quote.image_url %>
-</p>
+			<p>
+				<img src="<%= @quote.image_url %>" width="500" />
+			</p>
 
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+			<p>
+				<strong>Image url:</strong>
+				<%= link_to @quote.image_url %>
+			</p>
+
+			<div class="ui buttons">
+				<div class="ui button"> <%= link_to 'Edit', edit_quote_path(@quote) %> </div>
+				<div class="or"></div>
+				<div class="ui button"><%= link_to 'Back', quotes_path %></div>
+			</div>
+		</div>
+		
+	</div>
+
+
