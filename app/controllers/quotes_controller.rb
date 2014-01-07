@@ -3,13 +3,18 @@ require 'flickraw'
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
-   http_basic_authenticate_with name: "lieke", password: "secret",
-except: [:random]
+  http_basic_authenticate_with name: "lieke", password: "secret",
+  except: [:random]
 
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    sort_column = params[:key] ? params[:key] : "author"
+
+    puts "using #{sort_column}"
+    puts "#{params[:key]}"
+
+    @quotes = Quote.paginate(:page => params[:page], :per_page => 15, :order => "#{sort_column} ASC")
   end
 
   # GET /quotes/1
@@ -69,12 +74,12 @@ except: [:random]
   #Gives a random quote
   def random
 
-      @quote = Quote.order("RANDOM()").first
+    @quote = Quote.order("RANDOM()").first
 
-      if @quote.image_url.blank?      
-          @quote.image_url = get_flickr_image_url(@quote)
-          @quote.save
-      end
+    if @quote.image_url.blank?      
+      @quote.image_url = get_flickr_image_url(@quote)
+      @quote.save
+    end
   end
 
 
@@ -119,4 +124,4 @@ except: [:random]
 
     end  
 
-end
+  end

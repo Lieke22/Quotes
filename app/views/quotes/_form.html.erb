@@ -2,29 +2,29 @@
 <%= form_for(@quote) do |f| %>
 <% if @quote.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+	<h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
 
-  <ul>
-    <% @quote.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
+	<ul>
+		<% @quote.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
 </div>
 <% end %>
 
 <div class="field">
- <b> <%= f.label :author %><br> </b>
- <%= f.text_field :author %>
+	<b> <%= f.label :author %><br> </b>
+	<%= f.text_field :author %>
 </div>
 <div class="field">
-  <b>  <%= f.label :quote %><br></b>
-  <%= f.text_area :quote %>
+	<b>  <%= f.label :quote %><br></b>
+	<%= f.text_area :quote %>
 </div>
 <div class="field">
- <b> <%= f.label :image_url %><br></b>
- <%= f.text_area :image_url %>
+	<b> <%= f.label :image_url %><br></b>
+	<%= f.text_area :image_url %>
 </div>
 <div class="actions"> 
-  <%= f.submit class: 'ui teal button' %>
+	<%= f.submit class: 'ui teal button' %>
 </div>
 <% end %>

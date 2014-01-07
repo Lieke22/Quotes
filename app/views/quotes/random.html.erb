@@ -1,7 +1,7 @@
 <% content_for :head do %>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.superslides/0.6.2/stylesheets/superslides.css">
-<meta http-equiv="refresh" content="5"> 
+<meta http-equiv="refresh" content="10">
 
 <style type="text/css">
   h1 {
@@ -26,6 +26,17 @@
     border-radius: 3px 3px 3px 3px;    
   }
 
+mark{
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-transition: 500ms linear 0s;
+  -moz-transition: 500ms linear 0s;
+  -o-transition: 500ms linear 0s;
+  transition: 500ms linear 0s;
+  outline: 0 none;
+  color: #fff;
+  text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+}
 
 }
 </style>
@@ -37,21 +48,19 @@
       <div class="ui text menu">
         <div class="right menu">
           <div class="item">
-           <div class="ui button"><%= link_to('Database', quotes_path, data: { no_turbolink: true}) %> </div>
-          </div>
-        </div>
-      </div>
-      <img src= "<%= @quote.image_url %>" width="1024" height="682">
-      <div class="container">
+           <div class="ui button"><%= link_to('Admin', quotes_path, data: { no_turbolink: true}) %> </div>
+         </div>
+       </div>
+     </div>
+     <img src= "<%= @quote.image_url %>" width="1024" height="682">
+     <div class="container">
        <h1><%= highlight(@quote.quote, @quote.most_significant_word) %>
         <i> <%= @quote.author %> </i></h1>
         <p>
         </p>
       </div>
     </li>
-
   </div>
-
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -64,8 +73,6 @@
       hashchange: true
     });
   });
-
-
 </script>
 
 

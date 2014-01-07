@@ -39,6 +39,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#Use will-paginate for pagination
+gem 'will_paginate', '~> 3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
