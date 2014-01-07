@@ -3,6 +3,9 @@ require 'flickraw'
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
+   http_basic_authenticate_with name: "lieke", password: "secret",
+except: [:random]
+
   # GET /quotes
   # GET /quotes.json
   def index

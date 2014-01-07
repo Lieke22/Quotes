@@ -1,76 +1,83 @@
 <% content_for :head do %>
 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.superslides/0.6.2/stylesheets/superslides.css">
-  <meta http-equiv="refresh" content="5"> 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.superslides/0.6.2/stylesheets/superslides.css">
+<meta http-equiv="refresh" content="5"> 
 
-  <style type="text/css">
-    h1 {
-      font-weight: 300;
-      color: white;
-      text-shadow: 0px 1px 1px rgb(0, 0, 0);
-      margin: 30px 0px;
-      font-size: 3em;
-    }
-
-    .container {
-      position: relative;
-      width: 50%;
-      max-width: 900px;
-      left: 90px;
-      top: 13%;
-      padding: 10px 20px;
-
-      background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.3);
-      /*padding: 1px 10px;*/
-      box-shadow: 0px 0px 23px 5px rgba(0, 0, 0, 0.4);
-      border-radius: 3px 3px 3px 3px;    
-    }
-
-
+<style type="text/css">
+  h1 {
+    font-weight: 300;
+    color: white;
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
+    margin: 30px 0px;
+    font-size: 3em;
   }
+
+  .container {
+    position: relative;
+    width: 50%;
+    max-width: 900px;
+    left: 90px;
+    top: 13%;
+    padding: 10px 20px;
+
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.3);
+    /*padding: 1px 10px;*/
+    box-shadow: 0px 0px 23px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 3px 3px 3px 3px;    
+  }
+
+
+}
 </style>
 <% end %>
 
-
-
-
-  <div id="slides">
-    <div class="slides-container">
-      <li>
-        <img src= "<%= @quote.image_url %>" width="1024" height="682">
-        <div class="container">
-          <h1> <%= @quote.quote %>
-            <i> <%= @quote.author %> </i></h1>
-            <p>
-            </p>
+<div id="slides">
+  <div class="slides-container">
+    <li>
+      <div class="ui text menu">
+        <div class="right menu">
+          <div class="item">
+           <div class="ui button"><%= link_to('Database', quotes_path, data: { no_turbolink: true}) %> </div>
           </div>
-        </li>
+        </div>
       </div>
+      <img src= "<%= @quote.image_url %>" width="1024" height="682">
+      <div class="container">
+       <h1><%= highlight(@quote.quote, @quote.most_significant_word) %>
+        <i> <%= @quote.author %> </i></h1>
+        <p>
+        </p>
+      </div>
+    </li>
 
-    </div>
+  </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="'http://www.hotelparador.com/wp-content/plugins/wp-supersized/js/jquery.animate-enhanced.min.js?ver=0.75'"></script>
-    <script src="//cdn.jsdelivr.net/jquery.superslides/0.6.2/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-      $(function() {
-        $('#slides').superslides({
-          hashchange: true
-        });
-      });
-    </script>
-  
+</div>
 
-
-  
-
-  
-  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="'http://www.hotelparador.com/wp-content/plugins/wp-supersized/js/jquery.animate-enhanced.min.js?ver=0.75'"></script>
+<script src="//cdn.jsdelivr.net/jquery.superslides/0.6.2/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  $(function() {
+    $('#slides').superslides({
+      hashchange: true
+    });
+  });
 
 
-  
-  
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,76 +1,75 @@
 
-  <div class="ui inverted page grid masthead segment">
-    <div class="column">
-      <div class="inverted secondary pointing ui menu">
-        <div class="header item">Quotes Database</div>
-        <div class="right menu">
-          <a class="active item" href="http://0.0.0.0:3000/#">
-            <i class="home icon link icon"></i>
-          </a>
-          
-        </div> 
+<div class="ui inverted page grid masthead segment">
+  <div class="column">
+    <div class="inverted secondary pointing ui menu">
+      <div class="header item">Quotes Database</div>
+      <div class="right menu">
+        <div class="active item"><a data-no-turbolink= "true" href="http://0.0.0.0:3000"><i class="home icon link icon"></i>
+        </a></div>
+        
+      </div> 
 
-      </div>
+    </div>
 
 
-      <table class="ui table segment">
-        <thead> <tr><th colspan="6">
+    <table class="ui table segment">
+      <thead> <tr><th colspan="6">
 
-        </th></tr>
-        <tr>
-          <th>Author</th>
-          <th>Quote</th>
-          <th>Image url</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+      </th></tr>
+      <tr>
+        <th>Author</th>
+        <th>Quote</th>
+        <th>Image url</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <% @quotes.each do |quote| %>
-        <tr>
-          <td><%= quote.author %></td>
-          <td><%= quote.quote %></td>
-          <td><a href="<%= quote.image_url %>" target="_blank"><%= quote.image_url %></a></td>
-          <td>
-            <div class="ui vertical animated button">
-              <div class="hidden content"> <%= link_to 'Show', quote %></div>
-              <div class="visible content">
-                <i class="search icon"></i>
-              </div>
+    <tbody>
+      <% @quotes.each do |quote| %>
+      <tr>
+        <td><%= quote.author %></td>
+        <td><%= quote.quote %></td>
+        <td><a href="<%= quote.image_url %>" target="_blank"><%= quote.image_url %></a></td>
+        <td>
+          <div class="ui vertical animated button">
+            <div class="hidden content"> <%= link_to 'Show', quote %></div>
+            <div class="visible content">
+              <i class="search icon"></i>
             </div>
-          </td>
-          <td>
-            <div class="ui vertical animated button">
-              <div class="hidden content"> <%= link_to 'Edit', edit_quote_path(quote) %></div>
-              <div class="visible content">
-                <i class="edit icon"></i>
-              </div>
+          </div>
+        </td>
+        <td>
+          <div class="ui vertical animated button">
+            <div class="hidden content"> <%= link_to 'Edit', edit_quote_path(quote) %></div>
+            <div class="visible content">
+              <i class="edit icon"></i>
             </div>
-          </td>
-          <td>
-            <div class="ui vertical animated button">
-              <div class="hidden content"> <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-              <div class="visible content">
-                <i class="trash icon"></i>
-              </div>
+          </div>
+        </td>
+        <td>
+          <div class="ui vertical animated button">
+            <div class="hidden content"> <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <div class="visible content">
+              <i class="trash icon"></i>
             </div>
-          </td>
+          </div>
+        </td>
 
 
 
-        </tr>
-        <% end %>
-      </tbody>
-      <tfoot>  
-        <tr><th colspan="6">
-          <div class="ui blue labeled icon button"><i class="outline comment icon"></i> <%= link_to 'New Quote', new_quote_path %> </div>
-        </th> 
-      </tr></tfoot>
-    </table>
+      </tr>
+      <% end %>
+    </tbody>
+    <tfoot>  
+      <tr><th colspan="6">
+        <div class="ui blue labeled icon button"><i class="outline comment icon"></i> <%= link_to 'New Quote', new_quote_path %> </div>
+      </th> 
+    </tr></tfoot>
+  </table>
 
 
 
-  </div>
+</div>
 </div>

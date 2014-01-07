@@ -1,2 +1,4 @@
 module QuotesHelper
+	
 end
+
