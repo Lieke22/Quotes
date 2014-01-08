@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Quotes Application
 
 Ruby  v 2.1.0
@@ -53,7 +52,7 @@ Front page
 
 ![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Home.jpg)
 
-![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Screenshot%20fullscreen.jpg)
+![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Fullscreen.jpg)
 
 Admin page
 
@@ -75,4 +74,4 @@ Edit
 New
 
 ![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Screenshot%20from%202014-01-08%2012:46:36.png)
->>>>>>> 8e3224d9020efd865eed4f943737705427386571
+
