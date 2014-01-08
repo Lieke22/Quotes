@@ -52,7 +52,6 @@ Front page
 
 ![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Home.jpg)
 
-![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Fullscreen.jpg)
 
 Admin page
 
