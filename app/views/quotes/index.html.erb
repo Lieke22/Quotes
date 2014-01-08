@@ -5,7 +5,9 @@
       <div class="header item">Quotes Database</div>
       <div class="right menu">
         <div class="active item">
-          <a data-no-turbolink= "true" href="/"><i class="home icon link icon"></i></a>
+          <%= link_to root_path(@quote), data: { no_turbolink: true} do %>
+          <i class="home icon link icon"></i>
+          <% end %>
         </div>        
       </div> 
     </div>

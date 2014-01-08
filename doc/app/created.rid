@@ -1,0 +1,7 @@
+Wed, 08 Jan 2014 11:39:17 +0100
+README.rdoc	Wed, 01 Jan 2014 21:03:28 +0100
+app/controllers/application_controller.rb	Wed, 01 Jan 2014 21:03:28 +0100
+app/controllers/quotes_controller.rb	Tue, 07 Jan 2014 23:33:04 +0100
+app/helpers/application_helper.rb	Sun, 05 Jan 2014 21:58:13 +0100
+app/helpers/quotes_helper.rb	Tue, 07 Jan 2014 18:49:44 +0100
+app/models/quote.rb	Tue, 07 Jan 2014 18:09:45 +0100

@@ -3,7 +3,7 @@ require 'flickraw'
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
-  http_basic_authenticate_with name: "lieke", password: "secret",
+  http_basic_authenticate_with name: "admin", password: "secret",
   except: [:random]
 
   # GET /quotes
@@ -95,8 +95,8 @@ class QuotesController < ApplicationController
     end
 
     def get_flickr_image_url(quote)
-      FlickRaw.api_key=""
-      FlickRaw.shared_secret=""
+      FlickRaw.api_key="YOUR API KEY"
+      FlickRaw.shared_secret="YOUR SECRET KEY"
 
       result = flickr.photos.search(:text => quote.most_significant_word, :per_page => 1, :safe_search => 1, :is_commons => true)
 

@@ -133,6 +133,10 @@ p a {
   min-height: 100px;
 }
 
+i.circular.icon{
+  box-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff !important;
+}
+
 .ui.shape .icon,
 .link.list .icon {
   margin: 0em;

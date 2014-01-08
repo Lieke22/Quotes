@@ -46,12 +46,12 @@ mark{
   <div class="slides-container">
     <li>
       <div class="ui text menu">
-        <div class="right menu">
-          <div class="item">
-           <div class="ui button"><%= link_to('Admin', quotes_path, data: { no_turbolink: true}) %> </div>
-         </div>
-       </div>
-     </div>
+        <div class="right item">
+        <%= link_to quotes_path(@quote), data: { no_turbolink: true} do %>
+         <i class="circular teal large setting icon"></i> 
+        <% end %>
+        </div>
+      </div>
      <img src= "<%= @quote.image_url %>" width="1024" height="682">
      <div class="container">
        <h1><%= highlight(@quote.quote, @quote.most_significant_word) %>
