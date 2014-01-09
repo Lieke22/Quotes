@@ -2,9 +2,10 @@ development:
   adapter: sqlite3
   encoding: unicode
   host: localhost
-  database: development.sqlite3
+  database: quotes_development
   pool: 5
-  
+  username: quotes
+  password: quotes
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,7 +16,8 @@ test:
   database: quotes_test
   pool: 5
   host: localhost
-
+  username: quotes
+  password: quotes
 
 production:
   adapter: postgresql

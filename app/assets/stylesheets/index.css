@@ -25,7 +25,9 @@ body {
 .pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; font-weight: bold; background-color: #000099; color: #FFF; }
 .pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; color: #D1E0E0; }
 
-
+.paragraph {
+  color: white;
+}
 /*******************************
           UI Overrides
 *******************************/
