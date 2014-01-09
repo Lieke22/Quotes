@@ -76,7 +76,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.order("RANDOM()").first
 
-    if @quote.image_url.blank?      
+    if @quote && @quote.image_url.blank?      
       @quote.image_url = get_flickr_image_url(@quote)
       @quote.save
     end

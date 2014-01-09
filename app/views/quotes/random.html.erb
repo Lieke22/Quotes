@@ -47,18 +47,28 @@ mark{
     <li>
       <div class="ui text menu">
         <div class="right item">
-        <%= link_to quotes_path(@quote), data: { no_turbolink: true} do %>
-         <i class="circular teal large setting icon"></i> 
-        <% end %>
+          <%= link_to quotes_path(@quote), data: { no_turbolink: true} do %>
+          <i class="circular teal large setting icon"></i> 
+          <% end %>
         </div>
       </div>
-     <img src= "<%= @quote.image_url %>" width="1024" height="682">
-     <div class="container">
+      <% if @quote %>
+      <img src= "<%= @quote.image_url %>" width="1024" height="682">
+      <div class="container">
        <h1><%= highlight(@quote.quote, @quote.most_significant_word) %>
         <i> <%= @quote.author %> </i></h1>
         <p>
         </p>
       </div>
+      <% else %>
+      <img src= "http://www.hdwallpapers.in/walls/sky_colors-wide.jpg" width="1024" height="682">
+      <div class="container">
+       <h1><%= highlight("I quote others only in order to better express myself", "quote") %>
+        <i> Montagne </i></h1>
+        <p> <h4>Unfortunately, there are no quotes in the database yet. You can load the fixtures or wait a minute :) -- Lieke Boon </h4>
+        </p>
+      </div>
+      <% end %>
     </li>
   </div>
 </div>

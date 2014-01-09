@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140101200628) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "quotes", force: true do |t|
     t.string   "author"
     t.text     "quote"
@@ -24,6 +21,6 @@ ActiveRecord::Schema.define(version: 20140101200628) do
     t.datetime "updated_at"
   end
 
-  add_index "quotes", ["quote"], name: "index_quotes_on_quote", unique: true, using: :btree
+  add_index "quotes", ["quote"], name: "index_quotes_on_quote", unique: true
 
 end
