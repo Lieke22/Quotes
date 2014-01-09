@@ -5,8 +5,8 @@ Quotes Application
 
 ### Installation manual
 
- - Git clone https://github.com/Lieke22/Quotes.git.
- - In app/quotes/quotes_controller.rb: add your Flickr API keys on line 98 and 99. You can apply for your API keys [here] (http://www.flickr.com/services/apps/create/apply).
+ - git clone https://github.com/Lieke22/Quotes.git 
+ - In app/controllers/quotes_controller.rb: add your Flickr API keys on line 98 and 99. You can apply for your API keys [here] (http://www.flickr.com/services/apps/create/apply).
  - When you start the application, the database will be empty. (the cron job is schedulded to add a quote every 2 minutes.) If you'd like to try it out and don't want to wait you can load the fixtures quotes.yml. Use: rake db:fixtures:load RAILS_ENV=development, this will add four quotes to your database.
 
 
