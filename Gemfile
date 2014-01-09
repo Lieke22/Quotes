@@ -7,8 +7,6 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
-#Use postgreSQL as database
-gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -26,8 +24,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 3.0.4'
 
-#Gem for Heroku
-gem 'rails_12factor'
+#Gem for Heroku and PostgreSQL
+group :production, :staging do
+	gem 'rails_12factor'
+	gem 'pg'
+end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

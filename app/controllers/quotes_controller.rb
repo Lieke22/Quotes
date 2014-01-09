@@ -11,8 +11,8 @@ class QuotesController < ApplicationController
   def index
     sort_column = params[:key] ? params[:key] : "author"
 
-    puts "using #{sort_column}"
-    puts "#{params[:key]}"
+    #puts "using #{sort_column}"
+    #puts "#{params[:key]}"
 
     @quotes = Quote.paginate(:page => params[:page], :per_page => 15, :order => "#{sort_column} ASC")
   end
