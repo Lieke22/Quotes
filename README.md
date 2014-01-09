@@ -13,8 +13,8 @@
 ### Enable Automatic input
 * When you start the application, the database will be empty. The cron job is schedulded to add a quote every 2 minutes. To enable the cronjob type `whenever -i`. You can check the crontab with `crontab -l`. The entry should be similar to this:
 
-> # Begin Whenever generated tasks for: ~/quotes/config/schedule.rb
-> 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58 * * * * /bin/bash -l -c 'cd ~/quotes && RAILS_ENV=development bundle exec rake quotes:fetch --silent'
+ > Begin Whenever generated tasks for: ~/quotes/config/schedule.rb
+ > 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58 * * * * /bin/bash -l -c 'cd ~/quotes && RAILS_ENV=development bundle exec rake quotes:fetch --silent'
 
 
 * If you'd like to try it out without the cronjobs you can load the fixtures quotes.yml. Use: `rake db:fixtures:load RAILS_ENV=development`, this will add four quotes to your database.
