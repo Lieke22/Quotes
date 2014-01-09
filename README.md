@@ -3,6 +3,12 @@ Quotes Application
 Ruby  v 2.1.0
 Rails v 4.0.2
 
+### Installation manual
+
+ - Download the app.
+ - In app/quotes/quotes_controller.rb: add your Flickr API keys on lign 98 and 99. You can apply for your API keys [here] (http://www.flickr.com/services/apps/create/apply).
+ - When you start the application, the database will be empty. (the cron job is schedulded to add a quote every 2 minutes.) If you'd like to try it out and don't want to wait you can load the fixtures quotes.yml. Use: rake db:fixtures:load RAILS_ENV=development, this will add four quotes to your database.
+
 
 ### How does it work?
 A Ruby-on-Rails application that displays random quotes. The application consists of a couple of components & plugins:
@@ -75,3 +81,6 @@ New
 
 ![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/Screenshot%20from%202014-01-08%2012:46:36.png)
 
+### Have questions?
+
+I'd be happy to help. Contact me on Twitter, [@lieke2208](https://twitter.com/lieke2208)

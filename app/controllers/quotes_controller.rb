@@ -95,8 +95,8 @@ class QuotesController < ApplicationController
     end
 
     def get_flickr_image_url(quote)
-      FlickRaw.api_key="def55485efa82e421df715987b30e2a5"
-      FlickRaw.shared_secret="828ed35ca85f4b18"
+      FlickRaw.api_key="YOUR API KEY"
+      FlickRaw.shared_secret="YOUR SECRET KEY"
       result = flickr.photos.search(:text => quote.most_significant_word, :per_page => 1, :safe_search => 1, :is_commons => true)
 
       #Image used in case no result is found
