@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.0"
+#ruby "2.1.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -19,13 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-#group :production, :staging do
-#	gem "pg"
-#end
-
-#group :development, :test do
-#	gem 'sqlite3-ruby', '~> 1.3.0', :require => 'sqlite3'
-#end 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -34,7 +27,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 3.0.4'
 
 #Gem for Heroku
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
