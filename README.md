@@ -3,6 +3,10 @@
 * Ruby  v 2.1.0
 * Rails v 4.0.2
 
+### Demo
+
+Check: http://quotes-application.herokuapp.com
+
 ### Installation manual
 
 * `git clone https://github.com/Lieke22/Quotes.git` 
@@ -13,7 +17,7 @@
 ### Enable Automatic input
 * When you start the application, the database will be empty. The cron job is schedulded to add a quote every 2 minutes. To enable the cronjob type `whenever -i`. You can check the crontab with `crontab -l`. The entry should be similar to this:
 
- > Begin Whenever generated tasks for: ~/quotes/config/schedule.rb
+ > \# Begin Whenever generated tasks for: ~/quotes/config/schedule.rb
  > 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58 * * * * /bin/bash -l -c 'cd ~/quotes && RAILS_ENV=development bundle exec rake quotes:fetch --silent'
 
 
