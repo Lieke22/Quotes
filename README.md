@@ -92,7 +92,7 @@ Edit
 
 New
 
-![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/New.png)
+![screenshot1](https://raw2.github.com/Lieke22/Quotes/master/app/assets/images/new.png)
 
 ### Have questions?
 

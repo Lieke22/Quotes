@@ -7,9 +7,9 @@ class QuoteTest < ActiveSupport::TestCase
 
 
   test "Find most significant word" do
-  	assert_significant_word('anything', 'If the lessons of history teach us anything')
-	assert_significant_word('curiosity','The cure for boredom is curiosity')
-	assert_significant_word('discovery','The real voyage of discovery consists not in seeking new lands but seeing with new eyes')
+    assert_significant_word('anything', 'If the lessons of history teach us anything')
+    assert_significant_word('curiosity','The cure for boredom is curiosity')
+    assert_significant_word('discovery','The real voyage of discovery consists not in seeking new lands but seeing with new eyes')
   end
 
   test "Find most significant when equal length" do
